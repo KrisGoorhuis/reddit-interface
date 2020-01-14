@@ -5,8 +5,21 @@ pagination of results
 Slidey animations?
 
 
+### Notes
+We're storing tokens in localStorage right now. This is a security risk to be remedied. TODO.
+
+Idea one, via [stackoverflow](https://stackoverflow.com/questions/48983708/where-to-store-access-token-in-react-js), is to "set a secure, http only cookie which only the server can read. This cookie is sent with each request and is not able to be read using javascript."
+
+
+### Intentions
+#### Use raw API
+`Snoowrap` is a super handy library, and I'd be using it if this weren't a study project. Reddit's API is the most complicated I've used yet and I want to conquer it!
+
+
 ### What did I learn?
-OAuth2 redirect flow
+#### OAuth2 redirect flow
+I'm writing an article about this. I'll link it here when it's published!
+
 Proper URL parsing
 
 
@@ -46,9 +59,19 @@ Redirect from javascript after constructing the URL instead of trying to pull so
 
 #### dotenv module for local process.env variables
 
-
+#### Once again: not all variables need to live in state.
+Only ones you WANT to trigger a rerender upon change. I seem to keep butting against this and causing myself all sorts of unnecessary problems with rerunning code.
 
 ### Endpoints
 getAuthLink
 returns fields `authLink` and `state`
 
+
+
+### Persisting Questions
+#### Where should logic go?
+Server side or client side? In the reducers or in the app?
+
+I continue to believe there's likely a best practice here that I'm unaware of. I like using server endpoints, so I think I'm a bit biased toward shifting things there. Keeping logic outside reducers might simply be more of a personal preference - I think I enjoy having all the Redux stuff be uniformly neat.
+
+Of course, handling sensitive data should be left to the server side. That's less preferential. 
