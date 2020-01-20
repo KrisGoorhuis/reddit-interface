@@ -75,3 +75,8 @@ Server side or client side? In the reducers or in the app?
 I continue to believe there's likely a best practice here that I'm unaware of. I like using server endpoints, so I think I'm a bit biased toward shifting things there. Keeping logic outside reducers might simply be more of a personal preference - I think I enjoy having all the Redux stuff be uniformly neat.
 
 Of course, handling sensitive data should be left to the server side. That's less preferential. 
+
+
+
+### TODOs
+Fail gracefully when the user denies access
