@@ -23,6 +23,7 @@
       "snoowrap": "^1.20.0"
    },
    "devDependencies": {
+      "@types/react": "^16.9.17",
       "concurrently": "^4.0.1"
    }
 }
