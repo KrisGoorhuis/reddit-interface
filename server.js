@@ -83,5 +83,12 @@ if (process.env.NODE_ENV === 'production') {
       res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
    });
 }
+app.use(express.static(path.join(__dirname, 'client/build')));
 
+// Handle React routing, return all requests to React app
+app.get('*', function (req, res) {
+   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+console.log("Process.env.NODE_ENV")
+console.log(process.env.NODE_ENV)
 app.listen(port, () => console.log(`Listening on port ${port}`));
