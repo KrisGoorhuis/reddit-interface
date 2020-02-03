@@ -62,6 +62,20 @@ Redirect from javascript after constructing the URL instead of trying to pull so
 #### Once again: not all variables need to live in state.
 Only ones you WANT to trigger a rerender upon change. I seem to keep butting against this and causing myself all sorts of unnecessary problems with rerunning code.
 
+#### Overriding <button> styles
+
+The element is semantically lovely, but I so rarely want the CSS is comes packeged with. Just pop this somewhere at the top.
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 ### Endpoints
 getAuthLink
 returns fields `authLink` and `state`
